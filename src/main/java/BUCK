@@ -1,0 +1,18 @@
+java_library(
+  name = 'jgit-rebaser-lib',
+  srcs = glob(['**/*.java']),
+  deps = [
+    '//:jgit',
+    '//:slf4j-api',
+    '//:slf4j-simple',
+  ],
+)
+
+java_binary(
+  name = 'jgit-rebaser',
+  main_class = 'com.migeran.jgit.rebaser.Main',
+  deps = [
+    ':jgit-rebaser-lib',
+  ],
+)
+
